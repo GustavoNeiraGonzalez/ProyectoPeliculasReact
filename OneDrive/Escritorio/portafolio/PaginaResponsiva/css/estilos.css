@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;1,300&display=swap');
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+
+}
+.bodyNoTop{
+    position: relative;
+    top: 45px;
+}
+
+.top {
+    width: 100%;
+    height: 45px;
+    background:#333;
+    color:rgb(15, 179, 170);
+    position:fixed;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+}
+.TituloPagina{
+    position: relative;
+    left: 0;
+}
+a{
+    color:rgba(192, 96, 7, 0.637);
+}
+
+nav{
+    background:skyblue;
+    width: 100%;
+    height: 35px;
+    display:flex;
+    justify-content: space-between;
+    font-size: 13px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.BarraNavegación{
+    width: 100%;
+    height: 120px;
+    max-height: 100%;
+    padding-top: 30px;
+}
+
+.imagenesRedondas{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.USection{
+    
+    border-radius: 15%;
+    margin-top: 40px;
+    padding: 20px;
+    color:rgba(5, 0, 0, 0.774);
+    /*background: url("/img/morado.webp") no-repeat  center;*/
+    background-image: radial-gradient(circle at 20.12% 114.09%, hsla(313, 57%, 33%, 0.555) 0, #d2c7d349 16.67%, hsla(0, 48%, 94%, 0.37) 33.33%, hsla(308, 61%, 23%, 0.007) 50%, #8ddadf 66.67%, #6bc7d1 83.33%, #4eb9c9 100%);    
+}
+
+.asidemedio{
+    margin-top: 10px;
+}
+body{
+    background-image: linear-gradient(to right bottom, #1a9be0, #00acd1, #00b7ae, #5dbc85, #a1bb68);
+}
+footer{
+    
+    background-image: linear-gradient(to top, #000000, #1a1a1a, #2d2d2e, #414143, #565759);
+    color:rgba(255, 255, 255, 0.555);
+    text-align: center;
+}
+.textoUAR{
+    margin-top: 15px;
+}
+@media all and (min-width: 650px) {
+    
+    .USection{
+        display: none;/*PARA OCULTAR LOS SECTIONS A PARTIR DE UNA PANTALLA DE 650PX O MAS*/
+    }
+    .textoUAR{
+        display: flex;
+        justify-content: center;
+    }
+    .slider{
+        width:50%;
+        margin:auto;
+        overflow:hidden;
+    }
+    .slider ul{
+        display:flex;
+        padding: 0;
+        width: 300%;
+
+        animation:cambio 15s infinite alternate; /*animacion de 20 segundos infinita que alterna (no se estanca)*/
+        
+    }
+    .slider li{ 
+        width: 100%;
+        list-style:none;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .slider img{
+        height: auto;
+        width: auto;
+        max-height: 20%;
+        max-width: 40%;
+        
+    }
+    .slider p{
+        width: 100%;
+    }
+
+    @keyframes cambio {/* CAMBIO SIGNIFICA el animation CAMBIO del .slider ul*/
+        0%{ margin-left:0;}
+        40%{ margin-left:0;}/* significa que de el 0% de 20 segundos al 20% de 0 segundos este la primera imagen*/
+        /*Durante este 5% de 20 segundos significará la transicion de una imagen a otra*/
+        /*esto equivale a 1 segundos*/
+        45%{margin-left:-100%; }/* significa que del 25 al 45% de 20 segundos pasa la segunda imagen*/
+        65%{margin-left:-100%;}
+
+        70%{margin-left:-200%;}/* significa que del 25 al 45% de 20 segundos pasa la segunda imagen*/
+        100%{margin-left:-200%;}
+
+    }
+    /*Slider 1, el que se mueve automatico*/
+
+    /*SLIDER 2 EL QUE TIENE BOTONES*/
+    .slider2{
+        width:50%;
+        margin:auto;
+        position:relative;
+        height: 350px;
+        
+    }
+    .slider2 img{
+       margin-left: 40%;
+    }
+    .slider2 ul, li {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+    .slider2 li{
+        position:absolute;
+        left:0px;
+        top: 0px;
+        opacity: 0;
+        width: inherit;
+        padding: 30px;
+        border-style: solid;
+        border-color: purple;
+        border-radius: 15%;
+        background-image: radial-gradient(circle at 20.12% 114.09%, hsla(313, 57%, 33%, 0.555) 0, #d2c7d349 16.67%, hsla(0, 48%, 94%, 0.37) 33.33%, hsla(308, 61%, 23%, 0.007) 50%, #8ddadf 66.67%, #6bc7d1 83.33%, #4eb9c9 100%);    
+        height: inherit;
+        transition: opacity .5s;
+    }
+
+
+
+    .slider2 li:target {
+        opacity: 1; /*Mostramos el <li> del enlace que pulsemos*/
+    }
+    
+    .menu{
+        text-align: center;
+        margin: 20px;
+      }
+
+    .menu li{
+        display: inline-block;
+        text-align: center;
+        
+      }
+
+      
+    .menu li a{
+        display: inline-block;
+        color: white;
+        text-decoration: none;
+        background-color: grey;
+        padding: 10px;
+        width: 20px;
+        height: 20px;
+        font-size: 20px;
+        border-radius: 100%;
+      }
+    /*SLIDER 2 EL QUE TIENE BOTONES*/
+
+
+
+
+}

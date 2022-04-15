@@ -13,7 +13,9 @@ agregarles tambien <> etc */
     </div>
 );
 
-function Componente(props){
+function Componente(props){/* Tambien se puede utilizar en lugar de props usar {titulo, contenido}
+                            Esto hará que puedas utilizar los datos que quieres pasar por su respectivo
+                            nombre ya dado en el render */
     /* Las funciones deben empezar en mayusculas o tirará error*/
     console.log(props); /*Props son las variables entregadas en el render, utilizamos console.log solo para 
     visualizarlas en la consola del navegador */

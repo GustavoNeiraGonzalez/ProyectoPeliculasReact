@@ -23,7 +23,7 @@ function Componente(props){/* Tambien se puede utilizar en lugar de props usar {
     const contenidoP = props.contenido;/*aqui solo creamos una constante para darla en el parrafo*/
 
     return(/* utilizando props pasarás las variables donde las necesites */
-        <div>
+        <div className="ContenedorTituloP">
             <h1>{props.titulo}</h1> 
             <p>{contenidoP}</p>
         </div>

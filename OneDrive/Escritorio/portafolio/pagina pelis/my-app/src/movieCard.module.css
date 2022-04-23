@@ -3,6 +3,8 @@
     font-size: 1.5rem;
 }
 .movieImage{
+    width: 230px;
+    height: 345px;
     border-radius:10px;
     background-color:azure;
 }

@@ -1,3 +1,6 @@
 .movieGrid{
     display:grid;
+    grid-template-columns: repeat(auto-fill, 250px);
+    gap: 40px;
+    padding: 25px;
 }

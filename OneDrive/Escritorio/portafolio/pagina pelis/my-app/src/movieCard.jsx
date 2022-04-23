@@ -6,7 +6,7 @@ export function MovieCard({movie}){
     const imageUrl = "https://image.tmdb.org/t/p/w300" + movie.poster_path
     //creando el url de las imagenes con el formato + la informacion de movies.json
     return <li className={styles.movieCard}> 
-        <img src={imageUrl} alt={movie.title} />
+        <img className={styles.movieImage} src={imageUrl} alt={movie.title} />
         <div>{movie.title}</div>
         </li>; //Se le coloca un key obligatorio para optimizar la lista (de esta forma no renderizas innecesariamente la lista si le haces modificaciones)
 }

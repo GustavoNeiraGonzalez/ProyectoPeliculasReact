@@ -1,3 +1,4 @@
+import React from 'react';
 import styles from "./movieCard.module.css"//Moviendo el css al estilo modulo a traves de styles
 //para luego entregarlo en el classname, es decir que  utilizando 
 // styles.MovieCard estas llamando al estilo del class .movieCard creado en el css

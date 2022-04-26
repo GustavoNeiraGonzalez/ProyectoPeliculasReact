@@ -9,5 +9,5 @@
 a{
     text-decoration: none;/*Para que todos los links(etiqueta a) de react
     no contengan un subrayado obligatoriamente*/
-    
+    color: rgb(0, 0, 0);
 }

@@ -23,7 +23,7 @@ export function App(){ /* si no tiene export no podra ser uswado en el indexjs
         <main>
             <Switch>{/*Si no utilizamos switch puede pasar que se cargen
                         varias route a la vez */}
-                <Route exact path="/movie"> {/*utilizando exact haces que
+                <Route exact path="/movies/:movieId"> {/*utilizando exact haces que
                             solo muestre lo que contiene movie al utilizar el link
                             exacto, sin exact, puedes poner /asdsda y te llevara igual a
                             el path /, tambien puedes poner exact en todas y 

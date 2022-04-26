@@ -13,17 +13,28 @@ export function App(){ /* si no tiene export no podra ser uswado en el indexjs
     return <Router>
         <header>
             <h1 className={style.title}>Peliculas :D</h1>
+            <Link to="/">Home</Link>{/* Aqui lo que hace link es ser una etiqueta a (la cual redirige)
+                                    sin embargo esta no recarga la pagina, solo te cambia los componentes que quieres mostrar */}
+            <Link to="/movie">Movie</Link>
         </header>
         <main>
-            <Switch>
-                <Route path="/movie">
+            <Switch>{/*Si no utilizamos switch puede pasar que se cargen
+                        varias route a la vez */}
+                <Route exact path="/movie"> {/*utilizando exact haces que
+                            solo muestre lo que contiene movie al utilizar el link
+                            exacto, sin exact, puedes poner /asdsda y te llevara igual a
+                            el path /, tambien puedes poner exact en todas y 
+                            si el link es incorrecto poner un 404 not found*/}
                     Movie
                 </Route>
-                <Route path="/">
+                <Route exact path="/">
                     Home
                 </Route>
+                <Route  path="/">
+                    404 not found
+                </Route>
             </Switch>
-            <PelisGrid></PelisGrid>
+            
         </main>
         </Router>;
 }

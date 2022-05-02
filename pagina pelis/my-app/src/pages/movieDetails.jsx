@@ -7,12 +7,12 @@ export function MovieDetails(){
     console.log(movie.title);
     const imageUrl = "https://image.tmdb.org/t/p/w300" + movie.poster_path;
     return <div className={styles.detailsContainer}>
-        <img src={imageUrl} alt={movie.title} />
-        <div>
-            <p>
+        <img className={styles.column + " " + styles.movieImage} src={imageUrl} alt={movie.title} />
+        <div className={`${styles.column} ${styles.movieDetails}`}>
+            <p className={styles.padding2parrafos}>
                 <strong>Title: </strong> {movie.title} 
             </p>
-            <p>
+            <p className={styles.padding2parrafos}>
                 <strong>Generos: </strong>
                 {movie.genres.map(genre => genre.name).join(", ")}
                 {/*Importante, aqui hay otro tipos de datos guardados, el arreglo

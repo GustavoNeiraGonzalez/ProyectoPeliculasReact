@@ -4,17 +4,26 @@ import styles from "./movieDetails.module.css";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 
 export function MovieDetails(){
-    const { movieId } = useParams()
+    const { movieId } = useParams()/*con use params obtenemos el especifico 
+    id de la pelicula,ya que el id es una variable por cada pelicula entonces
+    al tener el id lo utilizaremos para llamar la informacion de la api que
+    contenga ese id en especifico*/
     const [movie,setMovie] = useState(null);
-    
+    const [isLoading, setIsLoading] = useState(true);/*aqui veremos que
+    si la pelicula esta cargando agregarle un efecto de carga */
     console.log(movieId)
-    useEffect(() =>{
+    useEffect(() =>{/*aqui hay un get, creado en httpclient.js que significaria una 
+        funcion similar a la que existe en el useffect de pelisgrid*/
+        setIsLoading(true);
         get("/movie/" + movieId).then((data) => {
+            setIsLoading(false);
             setMovie(data);
         })
     }, [movieId])/*Al darle el movieId hara que al cambiar
     el valor entonces se ejecute el useeffect  */
-
+    if (isLoading){
+        return <div>is Loading</div>; 
+    }
     if (!movie){
         return null
     } /*para que no de error de que movie este vació, ya que agarrará

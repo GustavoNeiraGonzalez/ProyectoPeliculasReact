@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react"
 import {get} from "../utils/httpclient"
-import movie from "./movie.json";
 import styles from "./movieDetails.module.css";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 

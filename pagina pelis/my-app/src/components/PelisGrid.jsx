@@ -1,6 +1,5 @@
 import { MovieCard } from "./movieCard";
 import React, { useEffect, useState } from 'react';
-import pelis from "./movies.json";
 import styles from "./PelisGrid.module.css"
 
 export function PelisGrid(){
@@ -28,7 +27,7 @@ export function PelisGrid(){
     que indicará que se ejecute solamente una vez al cargar la pagina*/
     return (
         <ul className={styles.movieGrid}>
-            {pelis.map((movie) =>(
+            {movies.map((movie) =>(
                 <MovieCard key={movie.id} movie={movie}/>
             ))}
             

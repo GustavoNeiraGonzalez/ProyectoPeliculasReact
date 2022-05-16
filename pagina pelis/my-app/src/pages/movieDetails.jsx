@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import {get} from "../utils/httpclient"
 import styles from "./movieDetails.module.css";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
+import { Spinner } from "../components/Spinner";
 
 export function MovieDetails(){
     const { movieId } = useParams()/*con use params obtenemos el especifico 
@@ -22,7 +23,7 @@ export function MovieDetails(){
     }, [movieId])/*Al darle el movieId hara que al cambiar
     el valor entonces se ejecute el useeffect  */
     if (isLoading){
-        return <div>is Loading</div>; 
+        return <Spinner/>
     }
     if (!movie){
         return null

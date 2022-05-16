@@ -9,6 +9,7 @@ export function MovieDetails(){
     id de la pelicula,ya que el id es una variable por cada pelicula entonces
     al tener el id lo utilizaremos para llamar la informacion de la api que
     contenga ese id en especifico*/
+
     const [movie,setMovie] = useState(null);
     const [isLoading, setIsLoading] = useState(true);/*aqui veremos que
     si la pelicula esta cargando agregarle un efecto de carga */

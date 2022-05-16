@@ -4,6 +4,7 @@ import styles from "./PelisGrid.module.css"
 import { Spinner } from "./Spinner";
 import { get } from "../utils/httpclient";
 import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
+import { useQuery } from "./hooks/useQuery";
 
 export function PelisGrid(){
     //console.log(pelis);
@@ -11,9 +12,7 @@ export function PelisGrid(){
     const [movies, setMovies] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
-    function useQuery() {
-        return new URLSearchParams(useLocation().search);
-    }
+
     //const movies = moviesState[0];
     //const setMovies = moviesState[1];
     const query = useQuery();

@@ -17,13 +17,15 @@ export function Search(){
     const handleSubmit = (e) =>{
         e.preventDefault();/*con esto prevenimos que al realizar una busqueda
         se actualize la pagina completa */
-        history.push("/?search=" + searchText);
+        history.push("/?search=" + searchText);//aqui hacemos que en el link
+        //se agrege la direccion que queremos para que despues agarrar lo
+        //que venga del search y buscar las coincidencias de pelis
     }
     return(
         <form onSubmit={handleSubmit} className={styles.searchContainer}>
             <div className={styles.Box}>
                 <input type="text" className={styles.searchInput} 
-                value={searchText} 
+                value={searchText } 
                 onChange={(e) => setSearchText(e.target.value)}/>
                 <button type="submit" className={styles.searchButton}>
                      <FcSearch className={styles.fondoNo} size={20}/>

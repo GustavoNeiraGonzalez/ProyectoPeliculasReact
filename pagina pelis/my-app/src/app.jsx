@@ -35,7 +35,7 @@ export function App(){ /* si no tiene export no podra ser uswado en el indexjs
                 </Route>
                 <Route  path="/">
                     <div className={styles2.resoults}>
-                        404 not found ;(
+                        404 not found ;(    
                     </div>
                 </Route>
             </Switch>

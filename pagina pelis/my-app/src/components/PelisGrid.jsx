@@ -40,7 +40,7 @@ export function PelisGrid({search}){
     que indicará que se ejecute solamente una vez al cargar la pagina, en el
     caso de utilizar search se ejecutara cada vez que search cambie de valor*/
 
-    if (movies.length == 0){
+    if (!isLoading && movies.length === 0){
         return <Empty/>
     }
 

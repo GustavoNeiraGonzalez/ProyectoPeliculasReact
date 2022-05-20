@@ -32,7 +32,7 @@ export function MovieDetails(){
         return null
     } /*para que no de error de que movie este vació, ya que agarrará
     un valor en el use effect */
-    const imageUrl = getMovieImg(movie.poster_path, 300)
+    const imageUrl = getMovieImg(movie.poster_path, 500)
 
     return <div className={styles.detailsContainer}>
         <img className={styles.column + " " + styles.movieImage} 

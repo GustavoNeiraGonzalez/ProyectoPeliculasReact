@@ -4,6 +4,7 @@ import styles from "./PelisGrid.module.css"
 import { Spinner } from "./Spinner";
 import { get } from "../utils/httpclient";
 import InfiniteScroll from "react-infinite-scroll-component";
+import { Empty } from "./empty";
 
 export function PelisGrid({search}){
     //console.log(pelis);
@@ -39,7 +40,10 @@ export function PelisGrid({search}){
     que indicará que se ejecute solamente una vez al cargar la pagina, en el
     caso de utilizar search se ejecutara cada vez que search cambie de valor*/
 
-    
+    if (movies.length == 0){
+        return <Empty/>
+    }
+
     return (
         <InfiniteScroll dataLength={movies.length} 
         hasMore={hasMore} next={() => setPage((prevPage) => prevPage + 1) }/*es recomendable

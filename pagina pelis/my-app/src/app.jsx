@@ -1,4 +1,5 @@
 import style from "./app.module.css";
+import styles2 from "./components/empty.module.css"
 import React from 'react';
 import {
     BrowserRouter as Router,
@@ -33,7 +34,9 @@ export function App(){ /* si no tiene export no podra ser uswado en el indexjs
                     <LandingPage/>
                 </Route>
                 <Route  path="/">
-                    404 not found
+                    <div className={styles2.resoults}>
+                        404 not found ;(
+                    </div>
                 </Route>
             </Switch>
         </main>

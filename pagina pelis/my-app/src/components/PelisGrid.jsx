@@ -3,8 +3,6 @@ import React, { useEffect, useState } from 'react';
 import styles from "./PelisGrid.module.css"
 import { Spinner } from "./Spinner";
 import { get } from "../utils/httpclient";
-import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
-import { useQuery } from "./hooks/useQuery";
 import InfiniteScroll from "react-infinite-scroll-component";
 
 export function PelisGrid({search}){

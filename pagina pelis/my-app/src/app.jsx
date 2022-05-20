@@ -1,4 +1,3 @@
-import { PelisGrid } from "./components/PelisGrid";
 import style from "./app.module.css";
 import React from 'react';
 import {

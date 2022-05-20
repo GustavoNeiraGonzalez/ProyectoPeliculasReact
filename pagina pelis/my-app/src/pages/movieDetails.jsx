@@ -4,6 +4,7 @@ import styles from "./movieDetails.module.css";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import { Spinner } from "../components/Spinner";
 import placeholder from "../utils/placeholder.jpg"
+import { getMovieImg } from "../utils/getMovieImg";
 
 export function MovieDetails(){
     const { movieId } = useParams()/*con use params obtenemos el especifico 
@@ -31,13 +32,11 @@ export function MovieDetails(){
         return null
     } /*para que no de error de que movie este vació, ya que agarrará
     un valor en el use effect */
-    const imageUrl = movie.poster_path!=null ? 
-    "https://image.tmdb.org/t/p/w300" + movie.poster_path : placeholder;
-    /*significado: si existe un movie.poster_path entonces retorna el link mas
-    el posterpath, si no, la imagen por defecto de que no hay imagen(placeholder) */
+    const imageUrl = getMovieImg(movie.poster_path, 300)
 
     return <div className={styles.detailsContainer}>
-        <img className={styles.column + " " + styles.movieImage} src={imageUrl} alt={movie.title} />
+        <img className={styles.column + " " + styles.movieImage} 
+        src={imageUrl} alt={movie.title} />
         <div className={`${styles.column} ${styles.movieDetails}`}>
             <p className={styles.padding2parrafos}>
                 <strong>Title: </strong> {movie.title} 

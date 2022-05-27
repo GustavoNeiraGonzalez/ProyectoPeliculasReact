@@ -1,10 +1,10 @@
 import React from "react"
+import { useSearchParams } from "react-router-dom";
 import { useDebounce } from "../components/hooks/useDebounce";
-import { useQuery } from "../components/hooks/useQuery";
 import { PelisGrid } from "../components/PelisGrid"
 import { Search } from "../components/search"
 export function LandingPage(){
-    const query = useQuery();
+    const [query] = useSearchParams();
     const search = query.get("search");
     const debouncedSearch = useDebounce(search, 400);
     return <div> 

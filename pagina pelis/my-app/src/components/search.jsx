@@ -2,16 +2,14 @@ import React, { useEffect, useState } from 'react';
 import styles from "./search.module.css"
 import {FcSearch} from "react-icons/fc"
 
-import { useQuery } from './hooks/useQuery';
-import { useNavigate } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
  
 
 export function Search(){
-    const query = useQuery();
+    const [query, setQuery] = useSearchParams();
     const search = query.get("search");
 
 
-    const navigate = useNavigate();
     const handleSubmit = (e) =>{
         e.preventDefault();/*con esto prevenimos que al realizar una busqueda
         se actualize la pagina completa */
@@ -28,7 +26,8 @@ export function Search(){
                 onChange={(e) => {
                     
                     const value = e.target.value;
-                    navigate("/?search=" + value);//aqui hacemos que en el link
+                    setQuery({search:value})
+                    //navigate("/?search=" + value);//aqui hacemos que en el link
                     //se agrege la direccion que queremos para que despues agarrar lo
                     //que venga del search y buscar las coincidencias de pelis
                     //agregando despues de value: , {replace:true}  reemplazariamos

@@ -6,7 +6,8 @@ import {
     Switch,
     Route,
     Link,
-    Routes
+    Routes,
+    Navigate
 } from "react-router-dom";
 import { MovieDetails } from "./pages/movieDetails";
 import { LandingPage } from "./pages/LandingPage";
@@ -29,11 +30,9 @@ export function App(){ /* si no tiene export no podra ser uswado en el indexjs
                             el path /, tambien puedes poner exact en todas y 
                             si el link es incorrecto poner un 404 not found*/}
                 </Route>
-                <Route exact path="/" element={<LandingPage/>}>   
+                <Route path="/" element={<LandingPage/>}>   
                 </Route>
-                <Route  path="/" element={<div className={styles2.resoults}>
-                        404 not found ;(    
-                    </div>}>
+                <Route  path="*" element={<Navigate to="/"/>}>
                 </Route>
             </Routes>
         </main>

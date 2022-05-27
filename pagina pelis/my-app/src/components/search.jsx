@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styles from "./search.module.css"
-import {FcSearch} from "react-icons/fc"
+import {FcSearch} from "react-icons/fc" 
 
 import { useSearchParams } from 'react-router-dom';
  

@@ -32,7 +32,7 @@ export function App(){ /* si no tiene export no podra ser uswado en el indexjs
                 </Route>
                 <Route path="/" element={<LandingPage/>}>   
                 </Route>
-                <Route  path="*" element={<Navigate to="/"/>}>
+                <Route  path="*" element={<Navigate replace to="/"/>}>
                 </Route>
             </Routes>
         </main>

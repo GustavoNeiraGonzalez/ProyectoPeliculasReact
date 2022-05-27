@@ -5,7 +5,8 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link
+    Link,
+    Routes
 } from "react-router-dom";
 import { MovieDetails } from "./pages/movieDetails";
 import { LandingPage } from "./pages/LandingPage";
@@ -21,24 +22,20 @@ export function App(){ /* si no tiene export no podra ser uswado en el indexjs
 
         </header>
         <main>
-            <Switch>{/*Si no utilizamos switch puede pasar que se cargen
-                        varias route a la vez */}
-                <Route exact path="/movies/:movieId"> {/*utilizando exact haces que
+            <Routes>
+                <Route exact path="/movies/:movieId" element={<MovieDetails/>}> {/*utilizando exact haces que
                             solo muestre lo que contiene movie al utilizar el link
                             exacto, sin exact, puedes poner /asdsda y te llevara igual a
                             el path /, tambien puedes poner exact en todas y 
                             si el link es incorrecto poner un 404 not found*/}
-                    <MovieDetails/>
                 </Route>
-                <Route exact path="/">
-                    <LandingPage/>
+                <Route exact path="/" element={<LandingPage/>}>   
                 </Route>
-                <Route  path="/">
-                    <div className={styles2.resoults}>
+                <Route  path="/" element={<div className={styles2.resoults}>
                         404 not found ;(    
-                    </div>
+                    </div>}>
                 </Route>
-            </Switch>
+            </Routes>
         </main>
         </Router>;
 }

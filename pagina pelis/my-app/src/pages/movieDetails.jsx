@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import {get} from "../utils/httpclient"
 import styles from "./movieDetails.module.css";
-import { useParams } from "react-router-dom/cjs/react-router-dom.min";
+import { useParams } from "react-router-dom";
 import { Spinner } from "../components/Spinner";
 import placeholder from "../utils/placeholder.jpg"
 import { getMovieImg } from "../utils/getMovieImg";

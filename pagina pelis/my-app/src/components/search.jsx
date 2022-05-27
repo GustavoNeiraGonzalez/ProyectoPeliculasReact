@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import styles from "./search.module.css"
 import {FcSearch} from "react-icons/fc"
-import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+
 import { useQuery } from './hooks/useQuery';
+import { useNavigate } from 'react-router-dom';
  
 
 export function Search(){
@@ -10,7 +11,7 @@ export function Search(){
     const search = query.get("search");
 
 
-    const history = useHistory();
+    const navigate = useNavigate();
     const handleSubmit = (e) =>{
         e.preventDefault();/*con esto prevenimos que al realizar una busqueda
         se actualize la pagina completa */
@@ -21,15 +22,18 @@ export function Search(){
                 <input 
                 type="text" 
                 className={styles.searchInput} 
-                value={search } 
+                value={search} 
                 placeholder="Search the movie"
                 aria-label="Search Movies"
                 onChange={(e) => {
                     
                     const value = e.target.value;
-                    history.push("/?search=" + value);//aqui hacemos que en el link
+                    navigate("/?search=" + value);//aqui hacemos que en el link
                     //se agrege la direccion que queremos para que despues agarrar lo
                     //que venga del search y buscar las coincidencias de pelis
+                    //agregando despues de value: , {replace:true}  reemplazariamos
+                    //la ruta del historial haciendo que lo que teniamos antes pueda
+                    //ser retrocedido 
                 }}
                 
                 />
